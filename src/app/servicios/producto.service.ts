@@ -25,11 +25,15 @@ export class ProductoService {
     producto2.categoria = ["ROPA", "DEPORTE"];
     this.productos.push(producto2);
 
-    // Agrega otros productos aquí...
+    // Agrega otros productos
 
   }
 
   public listar(): ProductoGetDTO[] {
     return this.productos;
+  }
+
+  public obtener(codigo:number):ProductoGetDTO | undefined{
+    return this.productos.find(p => p.codigo == codigo);
   }
 }

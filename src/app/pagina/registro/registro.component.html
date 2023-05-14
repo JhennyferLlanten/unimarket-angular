@@ -7,7 +7,7 @@
                 <input #nombre="ngModel" class="form-control" [ngClass]="nombre.invalid &&
                 (nombre.dirty || nombre.touched) ? 'is-invalid' : ''" type="text" name="nombre"
                 [(ngModel)]="usuario.nombre" required maxlength="50" />
-                <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="invalid-feedback">
+                <div class="invalid-feedback">
                     Por favor, ingresa un nombre válido.
                 </div>
             </div>

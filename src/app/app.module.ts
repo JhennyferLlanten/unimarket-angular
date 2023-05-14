@@ -12,6 +12,8 @@ import { CrearQuejaComponent } from './pagina/crear-queja/crear-queja.component'
 import { BusquedaComponent } from './pagina/busqueda/busqueda.component';
 import { DetalleProductoComponent } from './pagina/detalle-producto/detalle-producto.component';
 import { GestionProductosComponent } from './pagina/gestion-productos/gestion-productos.component';
+import { ProductoService } from './servicios/producto.service';
+import { EditarProductoComponent } from './pagina/editar-producto/editar-producto.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { GestionProductosComponent } from './pagina/gestion-productos/gestion-pr
     CrearQuejaComponent,
     BusquedaComponent,
     DetalleProductoComponent,
-    GestionProductosComponent
+    GestionProductosComponent,
+    EditarProductoComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +34,7 @@ import { GestionProductosComponent } from './pagina/gestion-productos/gestion-pr
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [ProductoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { UsuarioDTO } from 'src/app/modelo/usuario-dto';
+import { UsuarioDTO } from 'app/modelo/usuario-dto';
 
 @Component({
   selector: 'app-registro',

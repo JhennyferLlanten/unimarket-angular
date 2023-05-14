@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { ProductoGetDTO } from 'src/app/modelo/producto-get-dto';
-import { ProductoService } from 'src/app/servicios/producto.service';
+import { ProductoGetDTO } from 'app/modelo/producto-get-dto';
+import { ProductoService } from 'app/servicios/producto.service';
 
 @Component({
   selector: 'app-busqueda',

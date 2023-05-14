@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ProductoDTO } from 'src/app/modelo/producto-dto';
+import { ActivatedRoute } from '@angular/router';
+import { ProductoDTO } from 'app/modelo/producto-dto';
 
 @Component({
   selector: 'app-crear-producto',
@@ -12,8 +13,9 @@ export class CrearProductoComponent {
   producto:ProductoDTO;
 
   archivos!:FileList;
+  esEdicion:boolean = false;
   
-  constructor(){
+  constructor(private route:ActivatedRoute){
   this.categorias = [];
   this.cargarCategorias();
   this.producto = new ProductoDTO;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductoGetDTO } from 'src/app/modelo/producto-get-dto';
-import { ProductoService } from 'src/app/servicios/producto.service';
+import { ProductoGetDTO } from 'app/modelo/producto-get-dto';
+import { ProductoService } from 'app/servicios/producto.service';
 
 @Component({
   selector: 'app-gestion-productos',
@@ -10,12 +10,12 @@ import { ProductoService } from 'src/app/servicios/producto.service';
 export class GestionProductosComponent implements OnInit{
 
   productos:ProductoGetDTO[];
-  seleccionados:ProductoGetDTO;
+  seleccionados:ProductoGetDTO[];
   textoBtnEliminar:string;
 
   constructor(private productoServicio:ProductoService){
   this.productos = [];
-  this.seleccionados = new ProductoGetDTO();
+  this.seleccionados = [];
   this.textoBtnEliminar = "";
   }
 
@@ -50,7 +50,7 @@ export class GestionProductosComponent implements OnInit{
       this.productos = this.productos.filter(i => i != e);
     });
     
-    // this.seleccionados = [];
+    this.seleccionados = [];
     this.actualizarMensaje();
   }
 }
