@@ -8,6 +8,8 @@ import { BusquedaComponent } from './pagina/busqueda/busqueda.component';
 import { DetalleProductoComponent } from './pagina/detalle-producto/detalle-producto.component';
 import { GestionProductosComponent } from './pagina/gestion-productos/gestion-productos.component';
 import { EditarProductoComponent } from './pagina/editar-producto/editar-producto.component';
+import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.component';
+
 
 
 const routes: Routes = [
@@ -19,7 +21,8 @@ const routes: Routes = [
   { path: "detalle-producto", component: DetalleProductoComponent },
   { path: "gestion-productos", component: GestionProductosComponent },
   { path: "editar-producto/:codigo", component: EditarProductoComponent },
-
+  { path: "gestion-queja", component: GestionQuejaComponent},
+ 
   { path: "**", pathMatch: "full", redirectTo: "" }
 ];
 

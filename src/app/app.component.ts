@@ -10,15 +10,12 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'unimarket-angular';
 
-  private router:Router
-
-  constructor(){
-    this.router = new Router;
+  constructor(private router:Router){
   }
 
   public iraBusqueda(valor:string){
     if(valor){
-      this.router.navigate(["/busqueda", valor]);
+      this.router.navigate(["/busqueda", valor]);//Redirecciona a la pagina busqueda
     }
   }
 }

@@ -8,12 +8,12 @@ import { InicioComponent } from './pagina/inicio/inicio.component';
 import { LoginComponent } from './pagina/login/login.component';
 import { RegistroComponent } from './pagina/registro/registro.component';
 import { CrearProductoComponent } from './pagina/crear-producto/crear-producto.component';
-import { CrearQuejaComponent } from './pagina/crear-queja/crear-queja.component';
 import { BusquedaComponent } from './pagina/busqueda/busqueda.component';
 import { DetalleProductoComponent } from './pagina/detalle-producto/detalle-producto.component';
 import { GestionProductosComponent } from './pagina/gestion-productos/gestion-productos.component';
 import { ProductoService } from './servicios/producto.service';
 import { EditarProductoComponent } from './pagina/editar-producto/editar-producto.component';
+import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +22,7 @@ import { EditarProductoComponent } from './pagina/editar-producto/editar-product
     LoginComponent,
     RegistroComponent,
     CrearProductoComponent,
-    CrearQuejaComponent,
+    GestionQuejaComponent,
     BusquedaComponent,
     DetalleProductoComponent,
     GestionProductosComponent,
