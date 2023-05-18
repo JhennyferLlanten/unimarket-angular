@@ -1,3 +1,4 @@
+import { ProductoDTO } from "app/modelo/producto-dto";
 import { ProductoGetDTO } from "../modelo/producto-get-dto";
 
 export class ProductoService {
@@ -35,5 +36,15 @@ export class ProductoService {
 
   public obtener(codigo:number):ProductoGetDTO | undefined{
     return this.productos.find(p => p.codigo == codigo);
+  }
+  
+  public crear(producto:ProductoDTO){
+
+  }
+
+
+  //actualizar
+  public actualizar(producto:ProductoDTO){
+    return this.productos;
   }
 }

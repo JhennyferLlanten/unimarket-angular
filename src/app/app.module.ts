@@ -14,6 +14,7 @@ import { GestionProductosComponent } from './pagina/gestion-productos/gestion-pr
 import { ProductoService } from './servicios/producto.service';
 import { EditarProductoComponent } from './pagina/editar-producto/editar-producto.component';
 import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.component';
+import { CarritoComponent } from './pagina/carrito/carrito.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.comp
     BusquedaComponent,
     DetalleProductoComponent,
     GestionProductosComponent,
-    EditarProductoComponent
+    EditarProductoComponent,
+    CarritoComponent
   ],
   imports: [
     BrowserModule,

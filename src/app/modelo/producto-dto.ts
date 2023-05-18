@@ -5,5 +5,5 @@ export class ProductoDTO {
     precio: number = 0;
     codVendedor: number = 0;
     imagenes: string[] = [];
-    categoria: string = "";
+    categoria: string[] = [];
 }

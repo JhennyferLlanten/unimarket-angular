@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductoDTO } from 'app/modelo/producto-dto';
+import { ProductoGetDTO } from 'app/modelo/producto-get-dto';
+import { ProductoService } from 'app/servicios/producto.service';
 
 @Component({
   selector: 'app-crear-producto',
@@ -11,14 +13,27 @@ export class CrearProductoComponent {
   
   categorias:string[];
   producto:ProductoDTO;
-
+  
   archivos!:FileList;
   esEdicion:boolean = false;
+  codigoProducto:number;
   
-  constructor(private route:ActivatedRoute){
+  constructor(private route:ActivatedRoute, private productoServicio:ProductoService){
   this.categorias = [];
   this.cargarCategorias();
   this.producto = new ProductoDTO;
+  this.codigoProducto = 0;
+  
+  this.route.params.subscribe(params => {
+    this.codigoProducto = params["codigo"];
+    let objetoProducto = this.productoServicio.obtener(this.codigoProducto);
+    if(objetoProducto != null){
+      
+    this.producto = objetoProducto;
+    this.esEdicion = true;
+    }
+  });
+
   }
 
   private cargarCategorias(){
@@ -37,7 +52,7 @@ export class CrearProductoComponent {
 
   public crearProducto(){
     if(this.archivos != null && this.archivos.length > 0){
-    console.log(this.producto);
+      this.productoServicio.crear(this.producto);
     }else{
     console.log('Debe seleccionar al menos una imagen');
     }
