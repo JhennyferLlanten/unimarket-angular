@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -15,6 +16,7 @@ import { ProductoService } from './servicios/producto.service';
 import { EditarProductoComponent } from './pagina/editar-producto/editar-producto.component';
 import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.component';
 import { CarritoComponent } from './pagina/carrito/carrito.component';
+import { AlertaComponent } from './pagina/alerta/alerta.component';
 
 @NgModule({
   declarations: [
@@ -28,13 +30,15 @@ import { CarritoComponent } from './pagina/carrito/carrito.component';
     DetalleProductoComponent,
     GestionProductosComponent,
     EditarProductoComponent,
-    CarritoComponent
+    CarritoComponent,
+    AlertaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [ProductoService],
   bootstrap: [AppComponent]
