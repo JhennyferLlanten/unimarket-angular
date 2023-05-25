@@ -8,14 +8,8 @@ import { QuejaDTO } from 'app/modelo/queja-dto';
 })
 export class GestionQuejaComponent {
 
-  queja:QuejaDTO;
 
-  constructor(){
-    this.queja = new QuejaDTO();
-    }
+  constructor(){  }
 
-  public crearQueja(){
-    console.log(this.queja);
-  }  
 
 }

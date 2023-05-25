@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { InicioComponent } from './pagina/inicio/inicio.component';
 import { LoginComponent } from './pagina/login/login.component';
@@ -9,6 +9,8 @@ import { DetalleProductoComponent } from './pagina/detalle-producto/detalle-prod
 import { GestionProductosComponent } from './pagina/gestion-productos/gestion-productos.component';
 import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.component';
 import { CarritoComponent } from './pagina/carrito/carrito.component';
+import { ListarQuejasComponent } from './pagina/listar-quejas/listar-quejas.component';
+import { CrearQuejaComponent } from './pagina/crear-queja/crear-queja.component';
 
 
 
@@ -22,8 +24,11 @@ const routes: Routes = [
   { path: "gestion-productos", component: GestionProductosComponent },
   { path: "editar-producto/:codigo", component: CrearProductoComponent },
   { path: "gestion-queja", component: GestionQuejaComponent},
+  { path: "listar-quejas", component: ListarQuejasComponent},
+  { path: "crear-queja", component: CrearQuejaComponent } ,
   { path: "detalleProducto/:codigo", component: DetalleProductoComponent },
   { path: "carrito", component: CarritoComponent },
+  
   
 
   { path: "**", pathMatch: "full", redirectTo: "" }

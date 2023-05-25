@@ -17,6 +17,8 @@ import { EditarProductoComponent } from './pagina/editar-producto/editar-product
 import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.component';
 import { CarritoComponent } from './pagina/carrito/carrito.component';
 import { AlertaComponent } from './pagina/alerta/alerta.component';
+import { ListarQuejasComponent } from './pagina/listar-quejas/listar-quejas.component';
+import { CrearQuejaComponent } from './pagina/crear-queja/crear-queja.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AlertaComponent } from './pagina/alerta/alerta.component';
     GestionProductosComponent,
     EditarProductoComponent,
     CarritoComponent,
-    AlertaComponent
+    AlertaComponent,
+    ListarQuejasComponent,
+    CrearQuejaComponent
   ],
   imports: [
     BrowserModule,

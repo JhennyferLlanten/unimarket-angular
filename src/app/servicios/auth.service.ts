@@ -14,6 +14,6 @@ export class AuthService {
   constructor(private http:HttpClient) { }
 
   public registrar(usuario:UsuarioDTO):Observable<MensajeDTO>{
-    return this.http.post<MensajeDTO>(`${this.authURL}/registro`, usuario);
+    return this.http.post<MensajeDTO>(`${this.authURL}/crear_cliente`, usuario);
   }
 }
