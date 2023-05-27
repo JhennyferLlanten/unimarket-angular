@@ -11,27 +11,42 @@ import { GestionQuejaComponent } from './pagina/gestion-queja/gestion-queja.comp
 import { CarritoComponent } from './pagina/carrito/carrito.component';
 import { ListarQuejasComponent } from './pagina/listar-quejas/listar-quejas.component';
 import { CrearQuejaComponent } from './pagina/crear-queja/crear-queja.component';
+import { BuscarQuejaComponent } from './pagina/buscar-queja/buscar-queja.component';
+import { LoginGuard } from './guards/permiso.service';
+import { RevisarProductosComponent } from './pagina/revisar-productos/revisar-productos.component';
+import { RolesGuard } from './guards/roles.service';
 
 
 
 const routes: Routes = [
   { path: "", component: InicioComponent },
-  { path: "login", component: LoginComponent },
-  { path: "registro", component: RegistroComponent },
-  { path: "crear-producto", component: CrearProductoComponent },
   { path: "busqueda/:texto", component: BusquedaComponent },
-  { path: "detalle-producto", component: DetalleProductoComponent },
-  { path: "gestion-productos", component: GestionProductosComponent },
-  { path: "editar-producto/:codigo", component: CrearProductoComponent },
-  { path: "gestion-queja", component: GestionQuejaComponent},
-  { path: "listar-quejas", component: ListarQuejasComponent},
-  { path: "crear-queja", component: CrearQuejaComponent } ,
+  { path: "detalle-producto", component: DetalleProductoComponent },  
   { path: "detalleProducto/:codigo", component: DetalleProductoComponent },
   { path: "carrito", component: CarritoComponent },
-  
-  
+  { path: "login", component: LoginComponent, canActivate: [LoginGuard] },
+  { path: "registro", component: RegistroComponent, canActivate: [LoginGuard] },
+ 
+  { path: "crear-producto", component: CrearProductoComponent, canActivate: [RolesGuard], data: {
+    expectedRole: ["CLIENTE"] } },
+  { path: "editar-producto/:codigo", component: CrearProductoComponent, canActivate:
+    [RolesGuard], data: { expectedRole: ["CLIENTE"] } },
+  { path: "gestion-productos", component: GestionProductosComponent, canActivate:
+    [RolesGuard], data: { expectedRole: ["CLIENTE"] } },
+  { path: "gestion-queja", component: GestionQuejaComponent, canActivate:
+    [RolesGuard], data: { expectedRole: ["CLIENTE"] } },
+  { path: "crear-queja", component: CrearQuejaComponent, canActivate:
+    [RolesGuard], data: { expectedRole: ["CLIENTE"] } },
+  { path: "listar-quejas", component: ListarQuejasComponent, canActivate:
+  [RolesGuard], data: { expectedRole: ["CLIENTE"] } },   
+  { path: "buscar-queja/:codigo", component: BuscarQuejaComponent, canActivate:
+  [RolesGuard], data: { expectedRole: ["CLIENTE"] } },
+
+  { path: "revisar-productos", component: RevisarProductosComponent, canActivate: [RolesGuard],
+  data: { expectedRole: ["MODERADOR"] } },
 
   { path: "**", pathMatch: "full", redirectTo: "" }
+
 ];
 
 @NgModule({
