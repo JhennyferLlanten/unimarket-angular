@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductoGetDTO } from 'app/modelo/producto-get-dto';
+import { ProductService } from 'app/servicios/product.service';
 import { ProductoService } from 'app/servicios/producto.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class GestionProductosComponent implements OnInit{
   seleccionados:ProductoGetDTO[];
   textoBtnEliminar:string;
 
-  constructor(private productoServicio:ProductoService){
+  constructor(private productServicio:ProductService, private productoServicio:ProductoService){
   this.productos = [];
   this.seleccionados = [];
   this.textoBtnEliminar = "";
