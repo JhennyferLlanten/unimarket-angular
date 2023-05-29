@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { QuejaGetDTO } from 'app/modelo/queja-get-dto';
+import { QuejaService } from 'app/servicios/queja.service';
 
 @Component({
   selector: 'app-listar-quejas',
@@ -10,8 +11,21 @@ export class ListarQuejasComponent {
 
   quejas:QuejaGetDTO[];
 
-  constructor(){
+  constructor(private quejaService: QuejaService){
     this.quejas = [];
+  }
+
+  ngOnInit(): void {
+
+    this.quejaService.listar(1).subscribe({
+      
+      next: data => {
+        this.quejas = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
 }

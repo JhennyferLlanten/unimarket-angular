@@ -16,5 +16,9 @@ export class ProductService {
   public listaProductos():Observable<MensajeDTO> {
     return this.http.get<MensajeDTO>(`${this.productoURL}/listar_disponibles`);
   }
+
+  public listar_mis_productos(codigo: number):Observable<MensajeDTO> {
+    return this.http.get<MensajeDTO>(`${this.productoURL}/listar_mis_productos/${codigo}`);
+  }
 }
 

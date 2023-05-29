@@ -20,8 +20,21 @@ export class GestionProductosComponent implements OnInit{
   this.textoBtnEliminar = "";
   }
 
+  // ngOnInit(): void {
+  //   this.productos = this.productoServicio.listar();
+  // }
+
   ngOnInit(): void {
-    this.productos = this.productoServicio.listar();
+
+    this.productServicio.listar_mis_productos(1).subscribe({
+      
+      next: data => {
+        this.productos = data.respuesta;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
   }
 
   public seleccionar(producto:ProductoGetDTO, estado:boolean){
