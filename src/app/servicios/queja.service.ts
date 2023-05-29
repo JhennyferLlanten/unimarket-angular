@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/internal/Observable';
 })
 export class QuejaService {
 
-  private quejaURL = "http://localhost:8080/api/queja";
+  private quejaURL = "https://unimarket-uq-prod.up.railway.app/api/queja";
 
   constructor(private http:HttpClient) { }
 

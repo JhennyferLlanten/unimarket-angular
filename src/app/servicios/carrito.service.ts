@@ -8,7 +8,7 @@ export class CarritoService {
     this.productos = [];
   }
   public agregar(codigo: number) {
-    this.productos.push(codigo); //validar que no se guarden prod repeditos
+    this.productos.push(codigo); 
   }
   public quitar(codigo: number) {
     let indice = this.productos.indexOf(codigo);

@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class UsuarioService {
 
-  private userUrl = "http://localhost:8080/api/usuarios";
+  private userUrl = "https://unimarket-uq-prod.up.railway.app/api/usuarios";
   
   constructor(private http: HttpClient) { }
   
